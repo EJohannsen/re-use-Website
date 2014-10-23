@@ -63,6 +63,7 @@ function getData(item)
 {
 	clearMarkers();
 	setMarker(new google.maps.LatLng(47.472173, -94.881648), 'Goodwill');
+	//THIS IS TEST. IF THIS WAS AN ACTUAL EMERGENCY...
 	//connect to database and get all stores with item
 	//<?php
 	//	$sql = "SELECT name FROM stores WHERE goods=" . item
