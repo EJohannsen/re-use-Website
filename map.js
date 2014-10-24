@@ -62,7 +62,8 @@ function clearMarkers()
 function getData(item)
 {
 	clearMarkers();
-	setMarker(new google.maps.LatLng(47.472173, -94.881648), 'Goodwill');
+	readTextFile("Untitled Document");
+	//setMarker(new google.maps.LatLng(47.472173, -94.881648), 'Goodwill');
 	//THIS IS TEST. IF THIS WAS AN ACTUAL EMERGENCY...
 	//connect to database and get all stores with item
 	//<?php
@@ -72,6 +73,25 @@ function getData(item)
 	//?>
 	//name = <?php $row?>;
 	//setMarker(name);
+}
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    stores = [];
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                //stores = allText.split(" ");
+                alert(allText);
+            }
+        }
+	}
+    rawFile.send(null);
 }
 
 
